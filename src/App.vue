@@ -9,7 +9,7 @@
         </v-app-bar>
 
         <v-content>
-            <HelloWorld/>
+            <users-load-view v-if="!usersReady"/>
         </v-content>
     </v-app>
 </template>
@@ -17,15 +17,19 @@
 <script>
     import HelloWorld from './components/HelloWorld';
     import DarkSwitch from './components/DarkSwitch';
+    import {mapGetters} from 'vuex';
+    import UsersLoadView from './views/UsersLoadView';
 
     export default {
         name: 'App',
-
         components: {
+            UsersLoadView,
             DarkSwitch,
             HelloWorld
         },
-
+        computed: {
+            ...mapGetters(['usersReady'])
+        },
         data: () => ({
             //
         })
