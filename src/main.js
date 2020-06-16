@@ -1,12 +1,28 @@
-import Vue from 'vue'
-import App from './App.vue'
-import store from './store'
-import vuetify from './plugins/vuetify';
+import Vue from 'vue';
+import App from './App.vue';
+import store from './store';
+import Vuetify from 'vuetify/lib';
+import localforage from 'localforage';
 
-Vue.config.productionTip = false
+localforage.config({
+    name: 'canvas-playground'
+});
 
-new Vue({
-  store,
-  vuetify,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+Vue.use(Vuetify);
+Vue.config.productionTip = false;
+
+localforage.getItem('theme').then(theme =>
+{
+    new Vue({
+        store,
+        vuetify: new Vuetify({
+            theme: {
+                dark: theme !== 'light'
+            }
+        }),
+        render: function(h)
+        {
+            return h(App);
+        }
+    }).$mount('#app');
+});

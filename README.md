@@ -1,4 +1,4 @@
-# devpostuseranalyzer
+# Devpost User Analyzer
 
 ## Project setup
 ```
