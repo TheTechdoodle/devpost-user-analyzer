@@ -5,7 +5,7 @@ import Vuetify from 'vuetify/lib';
 import localforage from 'localforage';
 
 localforage.config({
-    name: 'canvas-playground'
+    name: 'devpost-user-analyzer'
 });
 
 Vue.use(Vuetify);
