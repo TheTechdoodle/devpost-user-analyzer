@@ -10,6 +10,7 @@
 
         <v-content>
             <users-load-view v-if="!usersReady"/>
+            <users-view v-else/>
         </v-content>
     </v-app>
 </template>
@@ -19,10 +20,12 @@
     import DarkSwitch from './components/DarkSwitch';
     import {mapGetters} from 'vuex';
     import UsersLoadView from './views/UsersLoadView';
+    import UsersView from './views/UsersView';
 
     export default {
         name: 'App',
         components: {
+            UsersView,
             UsersLoadView,
             DarkSwitch,
             HelloWorld

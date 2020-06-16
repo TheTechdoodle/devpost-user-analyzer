@@ -8,7 +8,7 @@ export default new Vuex.Store({
         users: [],
         weights: {
             projectsCount: 1.0,
-            followerCount: 0.8,
+            followerCount: 0.1,
             achievementsCount: 0.5,
             skillCount: 0.6,
             interestCount: 0.0,
@@ -44,7 +44,7 @@ export default new Vuex.Store({
                 score += state.weights.skillCount * user.skills.length;
                 score += state.weights.introLength * user.intro.length;
                 
-                return {user, score};
+                return {score, ...user};
             });
         }
     }
