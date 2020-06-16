@@ -119,7 +119,10 @@
             },
             submit()
             {
-                this.submitJSON(JSON.parse(this.usersJSON));
+                this.submitJSON(JSON.parse(this.usersJSON).filter((thing, index, self) =>
+                {
+                    return self.findIndex(t => t.name === thing.name) === index;
+                }));
             },
             submitJSON(data)
             {

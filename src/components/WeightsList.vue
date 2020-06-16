@@ -8,7 +8,7 @@
                       max="1"
                       min="-1"
                       step="0.01"
-                      @input="(value) => setWeight(weight.id, value)"
+                      @change="(value) => setWeight(weight.id, value)"
                       :value="weights[weight.id]"
             />
         </v-card-text>

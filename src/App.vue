@@ -8,10 +8,10 @@
             <dark-switch/>
         </v-app-bar>
 
-        <v-content>
+        <v-main>
             <users-load-view v-if="!usersReady"/>
             <users-view v-else/>
-        </v-content>
+        </v-main>
     </v-app>
 </template>
 
