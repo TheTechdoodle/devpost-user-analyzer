@@ -16,7 +16,6 @@
 </template>
 
 <script>
-    import HelloWorld from './components/HelloWorld';
     import DarkSwitch from './components/DarkSwitch';
     import {mapGetters} from 'vuex';
     import UsersLoadView from './views/UsersLoadView';
@@ -28,13 +27,9 @@
             UsersView,
             UsersLoadView,
             DarkSwitch,
-            HelloWorld
         },
         computed: {
             ...mapGetters(['usersReady'])
-        },
-        data: () => ({
-            //
-        })
+        }
     };
 </script>

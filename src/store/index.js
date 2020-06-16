@@ -8,11 +8,11 @@ export default new Vuex.Store({
         users: [],
         weights: {
             projectsCount: 1.0,
-            followerCount: 0.1,
-            achievementsCount: 0.5,
-            skillCount: 0.6,
-            interestCount: 0.0,
-            introLength: 0.0
+            followerCount: 0.05,
+            achievementsCount: 0.4,
+            skillCount: 0.4,
+            interestCount: 0.05,
+            introLength: 0.05
         }
     },
     mutations: {
@@ -46,6 +46,10 @@ export default new Vuex.Store({
                 
                 return {score, ...user};
             });
+        },
+        weights: state =>
+        {
+            return state.weights;
         }
     }
 });
